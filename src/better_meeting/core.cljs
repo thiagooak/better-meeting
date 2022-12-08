@@ -31,7 +31,7 @@
   (let [t (round total 0)
         ; these are wrong as they consider 24h days and out unit is 8h days (business days)
         map {"3" "or the amount of time it would take you to watch every episode of Breaking Bad"
-             "6" "or the amount of time it would take you to watch the original Star Ward trilogy"
+             "6" "or the amount of time it would take you to watch the original Star Wars trilogy"
              "9" "or the amount of time it would take you to watch every episode of RuPaul's Drag Race"}]
     (map t)))
 
