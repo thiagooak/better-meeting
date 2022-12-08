@@ -29,6 +29,7 @@
 
 (defn total->note [total]
   (let [t (round total 0)
+        ; these are wrong as they consider 24h days and out unit is 8h days (business days)
         map {"3" "or the amount of time it would take you to watch every episode of Breaking Bad"
              "6" "or the amount of time it would take you to watch the original Star Ward trilogy"
              "9" "or the amount of time it would take you to watch every episode of RuPaul's Drag Race"
@@ -84,14 +85,14 @@
      [:div {:class "border-dashed border-t-2 border-gray-600 my-4"}]
      [:div {:class "grid grid-cols-2 gap-2 pl-8"}
       [:div "+ combined meeting time"]
-      [:div meeting " minutes"]
+      [:div meeting [:span {:class "text-sm"} " minutes"]]
       [:div "+ " [:a {:class "underline" :href "https://erichorvitz.com/CHI_2007_Iqbal_Horvitz.pdf"} "context switch"] " tax "]
-      [:div context " minutes"]
+      [:div context [:span {:class "text-sm"} " minutes"]]
       ]
      [:div {:class "border-dashed border-t-2 border-gray-600 my-4"}]
      [:div {:class "grid grid-cols-2 gap-2 pl-8"}
       [:div "= total time investment"]
-      [:div {:class "text-indigo-500 font-bold"} (round business 1) " days"]
+      [:div {:class "text-indigo-500 font-bold"} (round business 1) [:span {:class "text-sm"}" business days"]]
       [:div " "]
 [:div {:class "text-gray-400"} note]
       ]
